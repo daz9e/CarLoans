@@ -16,6 +16,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  *
  * @property DealershipApplication[] $dealershipApplications
  * @method static inRandomOrder()
+ * @method static paginate(int $int)
+ * @method static create(mixed $data)
+ * @method static find(int $id)
  */
 class Bank extends Model
 {
