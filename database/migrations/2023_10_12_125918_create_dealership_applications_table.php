@@ -23,7 +23,7 @@ return new class extends Migration
             $table->enum('status', ['new', 'in_progress', 'approved', 'rejected'])->default('new');
             $table->timestamps();
 
-            $table->foreign('bank_id')->references('id')->on('banks');
+            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
         });
     }
 
