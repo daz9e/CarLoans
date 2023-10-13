@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -19,19 +18,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $status
  * @property string $created_at
  * @property string $updated_at
- *
  * @property Bank $bank
+ *
  * @method static paginate(int $int)
  * @method static findOrFail($id)
  * @method static create(array $all)
+ * @method static find(mixed $id)
  */
 class DealershipApplication extends Model
 {
     use HasFactory;
 
-    /**
-     * @var array
-     */
     protected $fillable = [
         'bank_id',
         'dealer_name',

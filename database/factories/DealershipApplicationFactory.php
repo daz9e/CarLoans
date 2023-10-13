@@ -16,10 +16,12 @@ class DealershipApplicationFactory extends Factory
     public function definition(): array
     {
         $status = $this->faker->randomElement(['new', 'in_progress', 'approved', 'rejected']);
-        $bankId = Bank::inRandomOrder()->first()->id;
+
+        /** @var Bank $bank */
+        $bank = Bank::inRandomOrder()->first() ?? Bank::factory()->create();
 
         return [
-            'bank_id' => $bankId,
+            'bank_id' => $bank->id,
             'dealer_name' => $this->faker->company,
             'contact_person' => $this->faker->name,
             'loan_amount' => $this->faker->numberBetween(5000, 50000),
